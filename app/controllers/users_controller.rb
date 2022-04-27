@@ -5,15 +5,6 @@ class UsersController < ApplicationController
 
   def show; end
 
-  def new
-  end
-
-  def create
-    @user = user.new(params[:user])
-    if @user.save
-      redirect_to @user
-    else
-      render "new"
-    end
-  end
+  # def new
+  # end
 end
