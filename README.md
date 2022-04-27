@@ -10,10 +10,12 @@ The weBlogz app is a classic example of a blog website. I have create a fully fu
 - Commandline
 - PostgreSQL
 - Bootstrap
+- Embedded Ruby (ERB)
+- HTML5
 
 ## Getting started
 
-1. [Clone the project](https://github.com/brytebee/hellorails.git)
+1. [Clone the project](https://github.com/brytebee/weBlogz.git)
 2. Installing the packages by running `bundle install`
 3. On the cmd run `rails server`
 
@@ -34,7 +36,7 @@ Load the page and enjoy!
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/brytebee/hellorails/issues) here 😏😏.
+Feel free to check the [issues page](https://github.com/brytebee/weBlogz/issues) here 😏😏.
 
 ## Show your support
 
