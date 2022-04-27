@@ -7,6 +7,8 @@ RSpec.describe "Posts controller", :type => :request do
     expect(response).to render_template(:show)
   end
 
+  # it ""
+
   it "displays the posts index page" do
     get "/users/2/posts"
     expect(response).to render_template(:index)
