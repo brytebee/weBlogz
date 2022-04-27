@@ -16,4 +16,9 @@ RSpec.describe "Posts controller", :type => :request do
     get "/users/2/posts"
     expect(response).to render_template(:index)
   end
+
+  it "displays the posts index page content" do
+    get "/users/2/posts"
+    expect(response.body).to include('Post#Index')
+  end
 end
