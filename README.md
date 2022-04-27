@@ -19,6 +19,13 @@ The weBlogz app is a classic example of a blog website. I have create a fully fu
 2. Installing the packages by running `bundle install`
 3. On the cmd run `rails server`
 
+## Testing
+
+1. [Clone the project](https://github.com/brytebee/weBlogz.git)
+2. Installing the packages by running `bundle install`
+3. On the cmd run `cd weBlogz`
+4. Run `rspec` or `rspec spec`
+
 ### Prerequisites
 
 Internet connection and basic computing skills.
