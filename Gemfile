@@ -9,6 +9,8 @@ gem 'ffi', '~> 1.15', '>= 1.15.5'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 
+gem 'rails-controller-testing'
+
 # Rubocob linter checker file
 gem 'rubocop', '>= 1.0', '< 2.0'
 

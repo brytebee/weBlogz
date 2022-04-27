@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Posts controller", :type => :request do
 
-  it "creates a Widget and redirects to the Widget's page" do
+  it "displays the posts show page" do
     # get "/widgets/new"
     # expect(response).to render_template(:new)
     get "/users/2/posts/1"
