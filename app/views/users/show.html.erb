@@ -15,7 +15,7 @@
 <div class="d-flex justify-content-between">
 <div><h3><%= link_to post.title, user_post_path(post) %></h3>
 <p><%= post.text %></p></div>
-<div class="mb-1 mr-5 d-flex flex-wrap align-content-end">
+<div class="mb-1 mr-5 flex-direction-row d-flex flex-wrap align-content-end w-25">
   <span>Comments: <%= post.comments_counter %></span>
   <span class="ml-2">Likes: <%= post.likes_counter %></span>
 </div>
