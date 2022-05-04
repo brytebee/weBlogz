@@ -1,2 +1,6 @@
-<h1>User#show</h1>
-<p>This is the sample user show page</p>
+<%= image_tag @user.photo, :height => "150px", :width => "150px" %>
+<% @user.recent_posts.each do |post| %>
+  <h1><%= post.title %></h1>
+  <p><%= post.text %></p>
+  <p><%= post.comments_counter %></p>
+<% end %>
