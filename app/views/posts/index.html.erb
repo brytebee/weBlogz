@@ -1,4 +1,6 @@
-<% post.recent_comments.each do |comment| %>
-  <p><%= comment.author.name %>: <%= comment.text %></p> 
+<% @posts.each do |comment| %>
+  <h3><%= comment.title %></h3>
+  <p>Comment Body: <%= comment.text %></p>
+  <span><%= comment.author.name %></span>
 <% end %>
 
