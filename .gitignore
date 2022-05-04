@@ -6,6 +6,7 @@
 
 # Ignore node_module
 node_modules/
+play/
 
 # Ignore bundler config.
 /.bundle
