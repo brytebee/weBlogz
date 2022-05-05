@@ -4,7 +4,3 @@
   <p>Comments: <%= @post.comments.size %></p>
   <p>Likes: <%= @post.likes.size %></p>
 </div>
-
-<% @post.recent_comments.each do |comment| %>
-  <p>Comment Body: <%= comment.text %></p>
-<% end %>
