@@ -1,5 +1,11 @@
 
 <h2><%= @post.title %> by <%= @post.author.name %></h2>
+<div class="p-3">
+  <%= @post.comments.size %>
+  
+  <p>Comment Body: <%= @post.comments.size %></p>
+</div>
+
 
 <% @post.recent_comments.each do |comment| %>
   <p>Comment Body: <%= comment.text %></p>
