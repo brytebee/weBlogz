@@ -1,3 +1,5 @@
+<%= image_tag @user.photo, :alt => "user_photo", :height => "150px", :width => "150px" %>
+<h1><%= @user.name %></h1>
 <% @posts.each do |comment| %>
   <h3><%= comment.title %></h3>
   <p>Comment Body: <%= comment.text %></p>
