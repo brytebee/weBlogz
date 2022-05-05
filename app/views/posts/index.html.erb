@@ -1,8 +1,16 @@
 <%= image_tag @user.photo, :alt => "user_photo", :height => "150px", :width => "150px" %>
 <h1><%= @user.name %></h1>
-<% @posts.each do |comment| %>
-  <h3><%= comment.title %></h3>
-  <p>Comment Body: <%= comment.text %></p>
-  <span><%= comment.author.name %></span>
+<% @posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  <p>Post Body: <%= post.text %></p>
+  <span><%= post.author.name %></span>
+  <div>
+    <h4>Comments:</h4>
+    <div>
+      <% post.recent_comments.each do |comment| %>
+        <p><%= comment.author.name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 

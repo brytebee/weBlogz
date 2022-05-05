@@ -24,5 +24,5 @@
 
 <% end %>
 <div class="d-flex justify-content-center pb-5">
-<button type="button" class="btn btn-primary shadow rounded"><%""%>See all posts</button>
+<button type="button" class="btn btn-primary shadow rounded"><%= link_to "See all posts", user_posts_path(user_id: @user.id) %></button>
 </div>
