@@ -1,16 +1,41 @@
-<%= image_tag @user.photo, :alt => "user_photo", :height => "150px", :width => "150px" %>
-<h1><%= @user.name %></h1>
+<div class="card m-5">
+  <div class="d-flex justify-content-between">
+    <div class="m-1">
+      <%= image_tag @user.photo, :height => "150px", :width => "150px" %>
+    </div>
+    <div class="m-5 flex-grow-1">
+      <h1><%= @user.name %></h1>
+    </div>
+    <div class="mb-2 mr-5 d-flex flex-wrap align-content-end">
+      <h5>Number of Posts: <%= @user.posts_counter%></h5>
+    </div>
+  </div>
+</div>
+
 <% @posts.each do |post| %>
-  <h3><%= post.title %></h3>
-  <p>Post Body: <%= post.text %></p>
-  <span><%= post.author.name %></span>
-  <div>
-    <h4>Comments:</h4>
+  <div class="card m-5"> 
+    <div class="justify-content-between">
+      <div> 
+        <div>
+          <h2><%= post.title %></h2> 
+          <p><%= post.text %></p>
+        </div>
+        <div class="mb-3 mr-5 float-right">
+          <span>Comments: <%= post.comments_counter %></span>
+          <span class="ml-2">Likes: <%= post.likes_counter %></span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <div class="card m-5"> 
     <div>
+    <div class="m-3">
       <% post.recent_comments.each do |comment| %>
         <p><%= comment.author.name %>: <%= comment.text %></p>
       <% end %>
     </div>
   </div>
+</div>
+  
 <% end %>
-
