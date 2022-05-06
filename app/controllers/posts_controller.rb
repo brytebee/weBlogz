@@ -18,14 +18,15 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to user_path(id: @post.author_id)}
+        format.html { redirect_to user_path(id: @post.author_id) }
       else
         format.html { render :new, alert: 'An error has occurred while creating the post' }
       end
     end
   end
 
-  private 
+  private
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
