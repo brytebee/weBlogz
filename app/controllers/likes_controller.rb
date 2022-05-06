@@ -15,9 +15,4 @@ class LikesController < ApplicationController
       end
     end
   end
-
-  private
-  def like_params
-    params.require(:post).permit(:title, :text)
-  end
 end
