@@ -4,7 +4,7 @@
     <%= form_with model: @comment, url: user_post_comments_path, class: "card left" do |form| %>
       <%= form.label :text %> <br>
       <%= form.text_area :text , cols: 30, rows: 10 %> <br>
-      <%= form.submit "Submit", class: "btn" %>
+      <%= form.submit "Submit", class: "btn-info" %>
     <% end %>
   </div>
 </section>
