@@ -25,9 +25,9 @@
           <span class="ml-2">Likes: <%= post.likes_counter %></span>
         </div>
         <div class="right my-1 flex justify-end">
-          <%= link_to "Add comment", new_user_post_comment_path(user_id: post.author_id, post_id: post.id ), class: "btn" %>
+          <%= link_to "Add comment", new_user_post_comment_path(user_id: post.author_id, post_id: post.id ), class: "btn btn-info" %>
           <%= form_with model: @like, url: user_post_likes_path(post_id: post.id) do |form| %>
-          <%= form.submit "Add Like", class: "btn" %>
+          <%= form.submit "Add Like", class: "btn-info" %>
         <% end %>
     </div>
       </div>
