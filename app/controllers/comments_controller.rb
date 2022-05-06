@@ -4,14 +4,17 @@ class CommentsController < ApplicationController
   end
 
 	def create
-    @comment = Comment.new(params)
+    @comment = Comment.new(comment_params)
+    @post = Post.find(params[:post_id])
+    @comment.author_id = current_user.id
     @comment.post_id = params[:post_id]
 
-    if @comment.save
-      redirect_to post_path(@comment.post)
-    else
-      @article = Post.find(params[:post_id])
-      redirect_to post_path(@post)
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to user_post_path(user_id: @post.author_id, id: @post.id)}
+      else
+        format.html { render :new, alert: 'An error has occurred while creating the comment!', class: "alert-danger" }
+      end
     end
   end
 
