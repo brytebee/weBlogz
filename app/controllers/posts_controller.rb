@@ -14,12 +14,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.author = current_user
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post }
+        format.html { redirect_to user_path(id: @post.author_id)}
       else
-        format.html { render :new }
+        format.html { render :new, alert: 'An error has occurred while creating the post' }
       end
     end
   end

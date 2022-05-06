@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
+    # @current_user = current_user
   end
 
 	def create
