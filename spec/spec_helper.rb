@@ -21,7 +21,7 @@ RSpec.configure do |config|
   # Bullet wrapper for tests
   if Bullet.enable?
     config.before(:each) { Bullet.start_request }
-    config.after(:each)  { Bullet.end_request }
+    config.after(:each) { Bullet.end_request }
   end
 
   config.expect_with :rspec do |expectations|

@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 # Bullet to solve N+1 problem
-gem "bullet"
+gem 'bullet'
 
 # FFI to run tests on windows
 gem 'ffi', '~> 1.15', '>= 1.15.5'
