@@ -14,12 +14,12 @@ RSpec.describe User, type: :model do
   end
 
   it 'Post counter must be an integer' do
-    subject.post_counter = 'Bright'
+    subject.posts_counter = 'Bright'
     expect(subject).to_not be_valid
   end
 
   it 'Post counter must be an integer' do
-    subject.post_counter = 1
+    subject.posts_counter = 1
     expect(subject).to be_valid
   end
 end
