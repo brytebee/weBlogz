@@ -12,4 +12,14 @@ RSpec.describe Post, type: :model do
     subject.title.length <= 300
     expect(subject).to_not be_valid
   end
+
+  it "Comment counter must be an integer greater than or equal to zero" do
+    subject.comments_counter = -1
+    expect(subject).to_not be_valid
+  end
+
+  it "Like counter must be an integer greater than or equal to zero " do
+    subject.likes_counter = -1
+    expect(subject).to_not be_valid 
+  end
 end
