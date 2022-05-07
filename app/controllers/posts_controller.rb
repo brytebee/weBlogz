@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:comments, :likes).find(params[:id])
+    @post = Post.includes(:author, :comments, :likes).find(params[:id])
   end
 
   def new
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.includes(:comments).new(post_params)
     @post.author = current_user
 
     respond_to do |format|
