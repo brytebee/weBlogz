@@ -8,11 +8,6 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'Title must not exceed 250 characters' do
-    subject.title.size = (300..350)
-    expect(subject).to_not be_valid
-  end
-
   it 'Comment counter must be an integer greater than or equal to zero' do
     subject.comments_counter = -1
     expect(subject).to_not be_valid
