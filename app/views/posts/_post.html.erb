@@ -23,7 +23,7 @@
     <div class="card m-5"> 
       <div>
         <div class="m-3">
-          <% post.recent_comments.each do |comment| %>
+          <% post.includes(:likes).recent_comments.each do |comment| %>
             <p><%= comment.author.name %>: <%= comment.text %></p>
           <% end %>
         </div>
