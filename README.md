@@ -24,7 +24,7 @@ The weBlogz app is a classic example of a blog website. I have create a fully fu
 1. [Clone the project](https://github.com/brytebee/weBlogz.git)
 2. Installing the packages by running `bundle install`
 3. On the cmd run `cd weBlogz`
-4. Run `rspec` or `rspec spec`
+4. Run `rspec` or `rspec spec/models`
 
 ### Prerequisites
 
