@@ -6,7 +6,7 @@ ruby '3.1.2'
 # Bullet to solve N+1 problem
 # gem 'bullet'
 
-# Bullet to solve N+1 problem
+# Authorization with cancancan
 gem 'cancancan'
 
 # Authentication with devise
