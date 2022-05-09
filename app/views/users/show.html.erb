@@ -17,7 +17,7 @@
         <h3><%= link_to post.title, user_post_path(user_id: post.author_id, id: post.id) %></h3>
         <p><%= post.text %></p>
       </div>
-      <div class="mb-1 mr-5 flex-direction-row d-flex flex-wrap align-content-end w-25">
+      <div class="mb-3 mr-5">
         <span>Comments: <%= post.comments_counter %></span>
         <span class="ml-2">Likes: <%= post.likes_counter %></span>
       </div>

@@ -3,7 +3,10 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
   has_many :comments, foreign_key: 'author_id'
 
+  validates :name, presence: true
+  validates :posts_counter, numericality: { only_integer: true }
+
   def recent_posts
-    posts.order(created_at: :desc).limit(3)
+    posts.includes(:comments, :likes).order(created_at: :desc).limit(3)
   end
 end
