@@ -20,7 +20,8 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to user_path(id: @post.author_id), notice: 'Post created successfully!' }
       else
-        format.html { render :new, alert: 'An error has occurred while creating the post' }
+        flash.now[:alert] = @post.errors.full_messages.to_sentence
+        format.html { render :new }
       end
     end
   end
