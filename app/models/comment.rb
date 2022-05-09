@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
   after_save :update_comment_counter
 
-  validates :comments, length: { minimum: 10 }
+  validates :text, length: { minimum: 10 }
 
   belongs_to :author, class_name: 'User'
   belongs_to :post
