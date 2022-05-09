@@ -6,6 +6,9 @@ ruby '3.1.2'
 # Bullet to solve N+1 problem
 # gem 'bullet'
 
+# Authentication with devise
+gem 'devise'
+
 # FFI to run tests on windows
 gem 'ffi', '~> 1.15', '>= 1.15.5'
 
