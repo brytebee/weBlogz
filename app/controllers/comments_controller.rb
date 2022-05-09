@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
           redirect_to user_post_path(user_id: @post.author_id, id: @post.id), notice: 'Comment created successfully!'
         end
       else
+        flash.now[:alert] = @comment.errors.full_messages.to_sentence
         format.html { render :new }
       end
     end
