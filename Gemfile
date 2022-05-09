@@ -6,8 +6,17 @@ ruby '3.1.2'
 # Bullet to solve N+1 problem
 # gem 'bullet'
 
+# Authorization with cancancan
+gem 'cancancan'
+
+# Authentication with devise
+gem 'devise'
+
 # FFI to run tests on windows
 gem 'ffi', '~> 1.15', '>= 1.15.5'
+
+# Letter opener gem for email confirmation in production
+gem 'letter_opener', '~> 1.8', '>= 1.8.1'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
