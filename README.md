@@ -39,6 +39,14 @@ Load the page and enjoy!
 - Twitter: [@brytebee](https://twitter.com/brytebee)
 - LinkedIn: [brytebee](https://www.linkedin.com/in/brytebee/)
 
+## Collabrator
+
+👤 **Mithi**
+
+- GitHub: [@githubhandle](https://github.com/Mithi-code/)
+- Twitter: [@twitterhandle](https://twitter.com/sam_mongare)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mithicode/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
