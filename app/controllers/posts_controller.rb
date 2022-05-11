@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  load_and_authorize_resource :through => :current_user
   def index
     @user = User.includes(:posts, :comments, :likes).find(params[:user_id])
     @posts = Post.all
@@ -15,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.includes(:comments).new(post_params)
+    @post = Post.new(post_params)
     @post.author = current_user
     @post.author_id = current_user.id
 
@@ -30,9 +29,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.includes(:comments).find(params[:id])
-    @post.author = current_user
+    @post = Post.find(params[:id])
+    user = User.find(@post.author_id)
+    user.posts_counter -= 1
     @post.destroy if @post.present?
+    user.save
 
     # Redirect
     respond_to do |format|
