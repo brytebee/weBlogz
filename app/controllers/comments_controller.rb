@@ -24,14 +24,11 @@ class CommentsController < ApplicationController
   private
 
   def destroy
-    @post = Post.includes(:comments).find(params[:id])
-    @post.author = current_user
-    @post.destroy if @post.present?
-
-    # Redirect
-    respond_to do |format|
-      format.html { redirect_to user_path(id: @post.author_id), notice: 'Post was removed.' }
-    end
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @post.decrement!(:comments_counter)
+    @comment.destroy!
+    redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Success!'
   end
 
   def comment_params
