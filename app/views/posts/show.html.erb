@@ -20,6 +20,9 @@
       <% @post.recent_comments.includes(:author).each do |comment| %>
         <p><%= comment.author.name %>: <%= comment.text %></p>
       <% end %>
+         <% if current_user %>
+            <a><%= button_to "Delete Post", users_path, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+          <% end %>
     </div>
   </div>
 </div>

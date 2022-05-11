@@ -25,7 +25,9 @@
       <div class="m-3">
         <% post.recent_comments.includes(:author).each do |comment| %>
           <p><%= comment.author.name %>: <%= comment.text %></p>
-          
+          <% if can? :update %>
+            
+          <% end %>
          
 
         <% end %>

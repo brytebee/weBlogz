@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  load_and_authorize_resource :through => :current_user
   def index
     @user = User.includes(:posts, :comments, :likes).find(params[:user_id])
     @posts = Post.all
