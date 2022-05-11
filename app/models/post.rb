@@ -1,7 +1,8 @@
 class Post < ApplicationRecord
   after_save :increment_posts_counter
 
-  belongs_to :author, class_name: 'User', dependent: destroy
+  belongs_to :author, class_name: 'User'
+  # , dependent: destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
