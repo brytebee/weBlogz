@@ -14,8 +14,17 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :update, Post do
+      can :update, Post do |post|
         post.author == user
+      end
+      can :update, Comment do |comment|
+        comment.author_id == user.id
+      end
+      can :destroy, Post do |post|
+        post.author == user
+      end
+      can :destroy, Comment do |comment|
+        comment.author_id == user.id
       end
       can :create, Post
       can :create, Comment
