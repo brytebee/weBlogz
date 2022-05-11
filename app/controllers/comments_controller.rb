@@ -26,9 +26,7 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.includes(:comments).find(params[:id])
     @post.author = current_user
-    if @post.present?
-    @post.destroy
-    end
+    @post.destroy if @post.present?
 
     # Redirect
     respond_to do |format|
