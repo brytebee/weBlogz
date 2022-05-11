@@ -26,6 +26,7 @@
         <% post.recent_comments.includes(:author).each do |comment| %>
           <p><%= comment.author.name %>: <%= comment.text %></p>
           <% if can? :update, comment %>
+            <%= link_to "Edit Comment", edit_comment_path(comment), class: "btn btn-danger btn-xs round" %>
           <% end %>
           <% if can? :destroy, comment %>
             <%= link_to "Delete Comment", user_posts_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-xs round" %>
