@@ -23,19 +23,18 @@ class CommentsController < ApplicationController
 
   private
 
- 
-  # def destroy
-  #   @post = Post.includes(:comments).find(params[:id])
-  #   @post.author = current_user
-  #   if @post.present?
-  #   @post.destroy
-  #   end
-    
-  #   # Redirect
-  #   respond_to do |format|
-  #     format.html { redirect_to user_path(id: @post.author_id), notice: 'Post was removed.' }
-  #   end
-  # end
+  def destroy
+    @post = Post.includes(:comments).find(params[:id])
+    @post.author = current_user
+    if @post.present?
+    @post.destroy
+    end
+
+    # Redirect
+    respond_to do |format|
+      format.html { redirect_to user_path(id: @post.author_id), notice: 'Post was removed.' }
+    end
+  end
 
   def comment_params
     params.require(:comment).permit(:text)

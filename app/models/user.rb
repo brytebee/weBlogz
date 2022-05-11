@@ -3,8 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :lockable, :timeoutable
-         # :confirmable, 
+         :lockable, :timeoutable, :confirmable
 
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_many :likes, foreign_key: 'author_id', dependent: :destroy
@@ -18,6 +17,6 @@ class User < ApplicationRecord
   end
 
   def admin?
-    role == 'admin' ? true : false
+    role == 'admin'
   end
 end
