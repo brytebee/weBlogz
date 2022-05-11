@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<% if can? :create Post || @user.id == current_user.id  %>
+<% if can? :create, Post || @user.id == current_user.id  %>
   <button type="button" class="btn btn-info shadow rounded"><%= link_to "Add Post", new_user_post_path(user_id: @user.id), class: "btn-info" %></button>
 <% end %>
 
