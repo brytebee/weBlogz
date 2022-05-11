@@ -24,9 +24,6 @@
       </div>
 
        <% if @user.id == current_user.id  %>
-            <button type="button" class="btn btn-info shadow rounded">
-              <%= link_to "Add Post", new_user_post_path(user_id: @user.id), class: "btn-info" %>
-            </button>
             <a><%= button_to "Delete Post", users_path, method: :delete, data: { confirm: 'Are you sure?' } %></a>
           <% end %>
 
