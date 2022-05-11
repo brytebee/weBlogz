@@ -11,11 +11,11 @@ class Ability
     #   can :read, :all
     # end
     user ||= User.new # guest user (not logged in)
-    if user.admin?
+    if user.role == 'admin'
       can :manage, :all
     else
       can :update, Post do |post|
-        post.author == user
+        post.author_id == user.id
       end
       can :update, Comment do |comment|
         comment.author_id == user.id
@@ -28,6 +28,7 @@ class Ability
       end
       can :create, Post
       can :create, Comment
+      can :create, Like
       can :read, :all
     end
 
