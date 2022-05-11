@@ -21,8 +21,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
-
   def destroy
     @comment = Comment.find(params[:id])
     @post = @comment.post
@@ -30,6 +28,8 @@ class CommentsController < ApplicationController
     @comment.destroy!
     redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Success!'
   end
+
+  private
 
   def comment_params
     params.require(:comment).permit(:text)
