@@ -2,8 +2,9 @@ class Post < ApplicationRecord
   after_save :increment_posts_counter
 
   belongs_to :author, class_name: 'User'
-  has_many :likes
-  has_many :comments
+  # , dependent: destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :title, presence: true
   validates_associated :author

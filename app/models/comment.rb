@@ -4,7 +4,9 @@ class Comment < ApplicationRecord
   validates :text, length: { minimum: 10 }
 
   belongs_to :author, class_name: 'User'
+  # , dependent: destroy
   belongs_to :post
+  # , dependent: destroy
 
   private
 

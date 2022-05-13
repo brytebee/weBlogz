@@ -19,6 +19,9 @@
     <div class="m-3">
       <% @post.recent_comments.includes(:author).each do |comment| %>
         <p><%= comment.author.name %>: <%= comment.text %></p>
+        <% if can? :destroy, comment %>
+          <%= link_to "Delete Comment", user_post_comment_path(author_id: comment.author_id, post_id: comment.post_id,  id: comment.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-xs round" %>
+        <% end %>
       <% end %>
     </div>
   </div>

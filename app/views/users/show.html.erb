@@ -1,8 +1,7 @@
-<%# <a><%= link_to "Sign out", destroy_user_session_path, :method => :delete You_removed_closing_tag </a> %>
 
 <div class="card m-5">
   <div class="d-flex justify-content-between">
-    <%# <div class="m-1"><%= image_tag @user.photo, :height => "150px", :width => "150px" You_removed_closing_tag %>
+    <div class="m-1"><%= image_tag @user.photo, :height => "150px", :width => "150px" %></div>
     <div class="m-5 flex-grow-1"><h1><%= @user.name%></h1></div>
     <div class="mb-2 mr-5 d-flex flex-wrap align-content-end"><h5>Number of Posts: <%= @user.posts_counter%></h5></div>
   </div>
@@ -23,12 +22,23 @@
         <span>Comments: <%= post.comments_counter %></span>
         <span class="ml-2">Likes: <%= post.likes_counter %></span>
       </div>
+
+       <% if @user.id == current_user.id  %>
+            <a><%= button_to "Delete Post", users_path, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+          <% end %>
+
     </div>
   </div>
 <% end %>
 
 <div class="d-flex justify-content-center pb-5">
-  <button type="button" class="btn btn-info shadow rounded"><%= link_to "Add Post", new_user_post_path(user_id: @user.id), class: "btn-info" %></button>
-  <button type="button" class="btn btn-info shadow rounded"><%= link_to "See all posts", user_posts_path(user_id: @user.id), class: "btn-info" %></button>
-  <button type="button" class="btn btn-info shadow rounded"><%= link_to "See all users", users_path, class: "btn-info" %></button>
+  <% if can? :create, @post %>
+    <button type="button" class="btn btn-info shadow rounded"><%= link_to "Add Post", new_user_post_path(user_id: @user.id), class: "btn-info" %></button>
+  <% end %>
+  <button type="button" class="btn btn-info shadow rounded">
+    <%= link_to "See all posts", user_posts_path(user_id: @user.id), class: "btn-info" %>
+  </button>
+  <button type="button" class="btn btn-info shadow rounded">
+    <%= link_to "See all users", users_path, class: "btn-info" %>
+  </button>
 </div>
